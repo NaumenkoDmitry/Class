@@ -1,9 +1,15 @@
 'use strict';
 class Worker{
   constructor(name,lastName,daysWork,salary,premium){
-
+    
+    if(isNaN(daysWork) || typeof daysWork !== 'number'){
+      throw new TypeError('Days work must be number');
+    }
     if(daysWork <0){
       throw new RangeError('Days work can`t be minus')
+    }
+    if(isNaN(salary) || typeof salary !== 'number'){
+      throw new TypeError('Salary work must be number');
     }
     if(salary <0){
       throw new RangeError('Salary can`t be minus')
